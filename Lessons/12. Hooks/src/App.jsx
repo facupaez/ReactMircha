@@ -2,6 +2,8 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import HookCounter from "./components/HookCounter";
 import "./App.css";
+import HookScroll from "./components/HookScroll";
+import HookWatch from "./components/HookWatch";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <HookCounter title="Seguidores" />
+        <HookScroll />
+        <HookWatch />
       </div>
     </>
   );
