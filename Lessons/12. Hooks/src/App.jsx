@@ -6,6 +6,7 @@ import HookScroll from "./components/HookScroll";
 import HookWatch from "./components/HookWatch";
 import HookAjax from "./components/HookAjax";
 import HookPersonalized from "./components/HookPersonalized";
+import References from "./components/References";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <HookWatch />
         <HookAjax />
         <HookPersonalized />
+        <References />
       </div>
     </>
   );
