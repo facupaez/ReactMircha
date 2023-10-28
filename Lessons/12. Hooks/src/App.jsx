@@ -4,6 +4,7 @@ import HookCounter from "./components/HookCounter";
 import "./App.css";
 import HookScroll from "./components/HookScroll";
 import HookWatch from "./components/HookWatch";
+import HookAjax from "./components/HookAjax";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <HookCounter title="Seguidores" />
         <HookScroll />
         <HookWatch />
+        <HookAjax />
       </div>
     </>
   );

@@ -20,7 +20,7 @@ export default function HookWatch() {
     }
 
     return () => {
-      console.log("Fase de desmontaje");
+      // console.log("Fase de desmontaje");
       clearInterval(temp);
     };
   }, [visible]);

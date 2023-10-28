@@ -4,7 +4,7 @@ export default function HookScroll() {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    console.log("Moviendo scroll");
+    //console.log("Moviendo scroll");
 
     const detectScroll = () => setScrollY(window.pageYOffset);
 
@@ -12,21 +12,21 @@ export default function HookScroll() {
 
     return () => {
       window.removeEventListener("scroll", detectScroll);
-      console.log("Fase de desmontaje");
+      //console.log("Fase de desmontaje");
     };
     // solo se actualiza cuando la variable de estado cambia
   }, [scrollY]);
 
   // simulaciones de fases de componentes con useEffect
   useEffect(() => {
-    console.log("Fase de montaje");
+    //console.log("Fase de montaje");
   }, []);
   useEffect(() => {
-    console.log("Fase de actualización");
+    //console.log("Fase de actualización");
   });
   useEffect(() => {
     return () => {
-      console.log("Fase de desmontaje");
+      //console.log("Fase de desmontaje");
     };
   });
 
