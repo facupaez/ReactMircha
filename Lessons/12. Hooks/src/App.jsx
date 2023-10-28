@@ -5,6 +5,7 @@ import "./App.css";
 import HookScroll from "./components/HookScroll";
 import HookWatch from "./components/HookWatch";
 import HookAjax from "./components/HookAjax";
+import HookPersonalized from "./components/HookPersonalized";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <HookScroll />
         <HookWatch />
         <HookAjax />
+        <HookPersonalized />
       </div>
     </>
   );
