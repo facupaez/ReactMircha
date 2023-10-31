@@ -2,6 +2,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Styles from "./components/styles";
+import StyledComponents from "./components/StyledComponents";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <Styles />
+        <StyledComponents />
       </div>
     </>
   );
