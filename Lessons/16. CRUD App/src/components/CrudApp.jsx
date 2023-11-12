@@ -39,15 +39,22 @@ const CrudApp = () => {
     /*  console.log(data); */
     setDb([...db, data]);
   };
+
+  const updateData = (data) => {
+    let newData = db.map((el) => (el.id === data.id ? data : el));
+    setDb(newData);
+  };
+
   return (
     <div>
       <h2>Crud App</h2>
       <CrudForm
         createData={createData}
+        updateData={updateData}
         dataToEdit={dataToEdit}
         setDataToEdit={setDataToEdit}
       />
-      <CrudTable data={db} />
+      <CrudTable data={db} setDataToEdit={setDataToEdit} />
     </div>
   );
 };
