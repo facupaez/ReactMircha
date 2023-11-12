@@ -45,6 +45,15 @@ const CrudApp = () => {
     setDb(newData);
   };
 
+  const deleteData = (id) => {
+    let isDeleted = confirm(`Estás seguro de eliminar el caballero ${id}`);
+
+    if (isDeleted) {
+      let newData = db.filter((el) => el.id !== id);
+      setDb(newData);
+    }
+  };
+
   return (
     <div>
       <h2>Crud App</h2>
@@ -54,7 +63,11 @@ const CrudApp = () => {
         dataToEdit={dataToEdit}
         setDataToEdit={setDataToEdit}
       />
-      <CrudTable data={db} setDataToEdit={setDataToEdit} />
+      <CrudTable
+        data={db}
+        setDataToEdit={setDataToEdit}
+        deleteData={deleteData}
+      />
     </div>
   );
 };
