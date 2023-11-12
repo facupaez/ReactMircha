@@ -12,7 +12,7 @@ export default function MultiActionAreaCard() {
         <CardMedia
           component="img"
           height="140"
-          image="https://unsplash.com/photos/brown-tabby-kitten-sitting-on-floor-nKC772R_qog"
+          image="https://www.fundacionaquae.org/wp-content/uploads/2018/10/proteger-a-los-animales.jpg"
           alt="green iguana"
         />
         <CardContent>
