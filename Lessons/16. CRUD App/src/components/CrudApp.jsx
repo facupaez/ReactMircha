@@ -32,10 +32,21 @@ const initialDb = [
 
 const CrudApp = () => {
   const [db, setDb] = useState(initialDb);
+  const [dataToEdit, setDataToEdit] = useState(null);
+
+  const createData = (data) => {
+    data.id = Date.now();
+    /*  console.log(data); */
+    setDb([...db, data]);
+  };
   return (
     <div>
       <h2>Crud App</h2>
-      <CrudForm />
+      <CrudForm
+        createData={createData}
+        dataToEdit={dataToEdit}
+        setDataToEdit={setDataToEdit}
+      />
       <CrudTable data={db} />
     </div>
   );
