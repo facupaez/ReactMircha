@@ -33,21 +33,55 @@ const CrudApi = () => {
 
   const createData = (data) => {
     data.id = Date.now();
-    /*  console.log(data); */
-    setDb([...db, data]);
+
+    let options = {
+      body: data,
+      headers: { "content-type": "application/json" },
+    };
+
+    api.post(url, options).then((res) => {
+      //console.log(res);
+      if (!res.err) {
+        setDb([...db, res]);
+      } else {
+        setError(res);
+      }
+    });
   };
 
   const updateData = (data) => {
-    let newData = db.map((el) => (el.id === data.id ? data : el));
-    setDb(newData);
+    let endpoint = `${url}/${data.id}`;
+    let options = {
+      body: data,
+      headers: { "content-type": "application/json" },
+    };
+
+    api.put(endpoint, options).then((res) => {
+      if (!res.err) {
+        let newData = db.map((el) => (el.id === data.id ? data : el));
+        setDb(newData);
+      } else {
+        setError(res);
+      }
+    });
   };
 
   const deleteData = (id) => {
     let isDeleted = confirm(`Estás seguro de eliminar el caballero ${id}`);
 
     if (isDeleted) {
-      let newData = db.filter((el) => el.id !== id);
-      setDb(newData);
+      let endpoint = `${url}/${id}`;
+      let options = {
+        headers: { "content-type": "application/json" },
+      };
+      api.del(endpoint, options).then((res) => {
+        if (!res.err) {
+          let newData = db.filter((el) => el.id !== id);
+          setDb(newData);
+        } else {
+          setError(res);
+        }
+      });
     }
   };
 
