@@ -1,9 +1,26 @@
 import React from "react";
 import { useform } from "./hooks/useform";
 
-const initiaForm = {};
+const initialForm = {
+  name: "",
+  email: "",
+  subject: "",
+  comments: "",
+};
 
-const validationsForm = (form) => {};
+const validationsForm = (form) => {
+  let errors = {};
+
+  if (!form.name.trim()) {
+    errors.name = "El campo 'Nombre' es requerido";
+  }
+
+  return errors;
+};
+
+let styles = {
+  color: "#dc3545",
+};
 
 const ContactForm = () => {
   const {
@@ -14,7 +31,7 @@ const ContactForm = () => {
     handleChange,
     handleBlur,
     handleSubmit,
-  } = useform(initiaForm, validationsForm);
+  } = useform(initialForm, validationsForm);
 
   return (
     <div>
@@ -29,7 +46,7 @@ const ContactForm = () => {
           value={form.name}
           required
         />
-        <br />
+        {errors.name && <p style={styles}>{errors.name}</p>}
         <input
           type="email"
           name="email"
@@ -39,7 +56,7 @@ const ContactForm = () => {
           value={form.email}
           required
         />
-        <br />
+        {errors.email && <p style={styles}>{errors.email}</p>}
         <input
           type="text"
           name="subject"
@@ -49,7 +66,7 @@ const ContactForm = () => {
           value={form.subject}
           required
         />
-        <br />
+        {errors.subject && <p style={styles}>{errors.subject}</p>}
         <textarea
           name="comments"
           cols="50"
@@ -60,7 +77,7 @@ const ContactForm = () => {
           value={form.comments}
           required
         ></textarea>
-        <br />
+        {errors.comments && <p style={styles}>{errors.comments}</p>}
         <input type="submit" value="Enviar" />
       </form>
     </div>
