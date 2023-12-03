@@ -4,15 +4,27 @@
   font-weight: 400;
 }
 
+h2{
+  text-align: center;
+}
+
 body {
-  margin: 0 .5rem;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+button{
+  border: thin solid #444;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin: 0 .5rem 0 0;
+  background-color: #eee;
+  color: #444;
+  font-weight: bold;
+  text-transform: none;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
 }
