@@ -1,6 +1,5 @@
 html {
   box-sizing: border-box;
-  font-size: 16px;
   font-family: sans-serif;
   margin: 0 .5rem;
 }
@@ -13,6 +12,7 @@ html {
 
 input[type='text'],
 input[type='email'], 
+input[type='submit'], 
 textarea {
   border: thin solid #dedede;
   border-radius: .25rem;
@@ -20,7 +20,7 @@ textarea {
   margin-bottom: 1rem;
   outline: none;
   display: block;
-  width: 20%;
+  width: 50%;
   font-size: 1rem;
   line-height: 1;
   background-color: transparent;

@@ -1,5 +1,7 @@
 import React from "react";
-import { useform } from "./hooks/useform";
+import { useform } from "../hooks/useform";
+import Loader from "./Loader";
+import Message from "./Message";
 
 const initialForm = {
   name: "",
@@ -99,9 +101,14 @@ const ContactForm = () => {
           value={form.comments}
           required
         ></textarea>
+        <br />
         {errors.comments && <p style={styles}>{errors.comments}</p>}
         <input type="submit" value="Enviar" />
       </form>
+      {loading && <Loader />}
+      {response && (
+        <Message msg="Los datos han sido enviados!" bgColor="#198754" />
+      )}
     </div>
   );
 };
