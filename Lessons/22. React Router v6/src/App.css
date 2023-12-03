@@ -45,3 +45,9 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.active-link{
+  font-weight: bold;
+  padding-bottom: .2rem;
+  border-bottom: thin solid #fff;
+}
