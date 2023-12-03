@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
@@ -16,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/acerca" element={<About />} />
+          <Route path="/about" element={<Navigate to="/acerca" />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
