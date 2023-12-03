@@ -1,7 +1,10 @@
 import React from "react";
 import Modal from "./Modal";
+import { useModal } from "./hooks/useModal";
 
 const Modals = () => {
+  const [isOpenModal1, openModal1, closeModal1] = useModal(false);
+  const [isOpenModal2, openModal2, closeModal2] = useModal(false);
   return (
     <div>
       <h2>Ventanas Modales</h2>
