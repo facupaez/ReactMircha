@@ -8,13 +8,13 @@ const Modals = () => {
   return (
     <div>
       <h2>Ventanas Modales</h2>
-      <button>Modal 1</button>
-      <Modal>
+      <button onClick={openModal1}>Modal 1</button>
+      <Modal isOpen={isOpenModal1} closeModal={closeModal1}>
         <h3>Modal 1</h3>
         <p>Hola, este es el contenido del modal 1</p>
       </Modal>
-      <button>Modal 2</button>
-      <Modal>
+      <button onClick={openModal2}>Modal 2</button>
+      <Modal isOpen={isOpenModal2} closeModal={closeModal2}>
         <h3>Modal 2</h3>
         <p>Hola, este es el contenido del modal 2</p>
       </Modal>
