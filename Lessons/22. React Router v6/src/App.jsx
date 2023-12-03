@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -28,6 +28,10 @@ function App() {
         </button>
       </div>
       <Router>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/acerca">Acerca</Link>
+        </nav>
         <Routes>
           <Route path="/" element={<h1>Home</h1>} />
           <Route path="/acerca" element={<Acerca />} />
