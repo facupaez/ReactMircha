@@ -3,6 +3,7 @@ import {
   Routes,
   Route,
   Navigate,
+  HashRouter,
 } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
@@ -40,6 +41,7 @@ function App() {
 
   return (
     <div className="App">
+      <h2>Rutas con BrowserRouter</h2>
       <Router>
         <Header />
         <Menu />
@@ -71,6 +73,39 @@ function App() {
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Router>
+      <hr />
+      <h2>Rutas con HashRouter</h2>
+      <HashRouter>
+        <Header />
+        <Menu />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/acerca" element={<About />} />
+          <Route path="/about" element={<Navigate to="/acerca" />} />
+          <Route path="/contacto" element={<Contact />} />
+          <Route path="/products" element={<Products products={products} />} />
+          <Route
+            path="/products/:id"
+            element={<ProductDetail products={products} />}
+          />
+          <Route path="/services" element={<Services />}>
+            <Route index element={<ServicesHome />} />
+            <Route path="warranty" element={<ServicesWarranty />} />
+            <Route path="list" element={<ServicesList services={services} />} />
+            <Route
+              path=":id"
+              element={
+                <>
+                  {<ServicesList services={services} />}
+                  {<ServiceDetail services={services} />}
+                </>
+              }
+            />
+            <Route path="politics" element={<ServicesPolitics />} />
+          </Route>
+          <Route path="*" element={<Error404 />} />
+        </Routes>
+      </HashRouter>
     </div>
   );
 }
