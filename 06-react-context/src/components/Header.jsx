@@ -1,6 +1,13 @@
 import React from "react";
 
-const Header = ({ theme, handleTheme, texts, handleLanguage }) => {
+const Header = ({
+  theme,
+  handleTheme,
+  texts,
+  handleLanguage,
+  auth,
+  handleAuth,
+}) => {
   return (
     <div>
       <header className={theme}>
@@ -26,9 +33,8 @@ const Header = ({ theme, handleTheme, texts, handleLanguage }) => {
           onClick={handleTheme}
         />
         <label htmlFor="dark">{texts.headerDark}</label>
-        <button>
-          {texts.buttonLogin}
-          {texts.buttonLogout}
+        <button onClick={handleAuth}>
+          {auth ? texts.buttonLogout : texts.buttonLogin}
         </button>
       </header>
     </div>
