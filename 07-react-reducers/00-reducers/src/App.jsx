@@ -1,5 +1,6 @@
 import "./App.css";
 import Contador from "./components/Contador";
+import ContadorMejorado from "./components/ContadorMejorado";
 
 function App() {
   return (
@@ -7,6 +8,8 @@ function App() {
       <h1>Reducers</h1>
       <hr />
       <Contador />
+      <hr />
+      <ContadorMejorado />
     </>
   );
 }
